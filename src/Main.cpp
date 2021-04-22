@@ -25,7 +25,7 @@
 #define _USE_MATH_DEFINES
 
 #include <SDL2/SDL.h>
-#include <GL/gl3w.h>
+#include <GL/glew.h>
 
 #include <time.h>
 #include <math.h>

@@ -1,0 +1,19 @@
+Instructions for building:
+
+  * brew install libsdl2
+
+  * 下载 oidn ispc-v1.15.0-macOS
+
+  * git clone https://github.com/knightcrawler25/GLSL-PathTracer.git
+
+  * cd GLSL-PathTracer
+
+  * mkdir build
+
+  * cmake ..
+
+  * make
+
+  * cd build
+
+  * To run the program: ./PathTracer

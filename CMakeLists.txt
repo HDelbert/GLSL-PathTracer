@@ -24,22 +24,23 @@ file(GLOB_RECURSE EXT_FILES
     ${CMAKE_SOURCE_DIR}/thirdparty/imgui/*.h
     ${CMAKE_SOURCE_DIR}/thirdparty/imgui/*.cpp
     ${CMAKE_SOURCE_DIR}/thirdparty/imguizmo/*.h
-    ${CMAKE_SOURCE_DIR}/thirdparty/imguizmo/*.cpp  
-    ${CMAKE_SOURCE_DIR}/thirdparty/RadeonRays/*.h 
-    ${CMAKE_SOURCE_DIR}/thirdparty/RadeonRays/*.cpp     
-    ${CMAKE_SOURCE_DIR}/thirdparty/gl3w/GL/*.c
-	${CMAKE_SOURCE_DIR}/thirdparty/oidn/*.h
-	${CMAKE_SOURCE_DIR}/thirdparty/oidn/*.hpp
-	${CMAKE_SOURCE_DIR}/thirdparty/tinydir/*.h
+    ${CMAKE_SOURCE_DIR}/thirdparty/imguizmo/*.cpp
+    ${CMAKE_SOURCE_DIR}/thirdparty/RadeonRays/*.h
+    ${CMAKE_SOURCE_DIR}/thirdparty/RadeonRays/*.cpp
+    ${CMAKE_SOURCE_DIR}/thirdparty/oidn/*.h
+    ${CMAKE_SOURCE_DIR}/thirdparty/oidn/*.hpp
+    ${CMAKE_SOURCE_DIR}/thirdparty/tinydir/*.h
 )
 
 set(SRCS ${SRC_FILES} ${EXT_FILES} ${SHADERS})
 
 set(SDL2_LIBRARIES "SDL2" "SDL2main")
 set(SDL2_INCLUDE_DIRS  ${CMAKE_SOURCE_DIR}/thirdparty/SDL2/include)
-set(SDL2_LIBDIR ${CMAKE_SOURCE_DIR}/thirdparty/SDL2/lib/x64)
+#set(SDL2_LIBDIR ${CMAKE_SOURCE_DIR}/thirdparty/SDL2/lib/x64)
+set(SDL2_LIBDIR /usr/local/lib)
 set(OIDN_LIBRARIES "OpenImageDenoise")
-set(OIDN_LIBDIR ${CMAKE_SOURCE_DIR}/thirdparty/oidn/lib)
+#set(OIDN_LIBDIR ${CMAKE_SOURCE_DIR}/thirdparty/oidn/lib)
+set(SYS_INCLUDE_DIRS /usr/local/include)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}/src/core
@@ -49,12 +50,12 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/thirdparty/imgui
   ${CMAKE_SOURCE_DIR}/thirdparty/glew/include
   ${CMAKE_SOURCE_DIR}/thirdparty/stb
-  ${CMAKE_SOURCE_DIR}/thirdparty/gl3w
   ${CMAKE_SOURCE_DIR}/thirdparty/imguizmo
   ${CMAKE_SOURCE_DIR}/thirdparty/RadeonRays
   ${CMAKE_SOURCE_DIR}/thirdparty/tinydir
   ${CMAKE_SOURCE_DIR}/thirdparty/oidn/include
   ${SDL2_INCLUDE_DIRS}
+  ${SYS_INCLUDE_DIRS}
 )
 
 link_directories(
@@ -96,7 +97,7 @@ ADD_EXECUTABLE(${EXE_NAME} ${SRCS})
 if(WIN32)
 TARGET_LINK_LIBRARIES(${EXE_NAME} ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES} ${OIDN_LIBRARIES})
 else()
-TARGET_LINK_LIBRARIES(${EXE_NAME} ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES} ${OIDN_LIBRARIES} dl)
+TARGET_LINK_LIBRARIES(${EXE_NAME} ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES} ${OIDN_LIBRARIES} dl glew)
 endif()
 
 #--------------------------------------------------------------------
@@ -108,6 +109,7 @@ add_definitions(-DBX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS=1)
 add_definitions(-D__STDC_LIMIT_MACROS)
 add_definitions(-D__STDC_CONSTANT_MACROS)
 add_definitions(-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS)
+add_definitions(-DIMGUI_IMPL_OPENGL_LOADER_GLEW)
 if(MSVC)
 add_definitions(-DWIN32)
 add_definitions(-D_WIN32)
