@@ -2,7 +2,7 @@ Instructions for building:
 
   * brew install libsdl2
 
-  * 下载 oidn ispc-v1.15.0-macOS
+  * 下载 oidn-1.3.0.x86_64.macos ispc-v1.15.0-macOS
 
   * git clone https://github.com/knightcrawler25/GLSL-PathTracer.git
 
