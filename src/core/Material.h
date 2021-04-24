@@ -10,8 +10,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions :
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -24,73 +24,70 @@
 
 #pragma once
 
-#include <vector>
 #include <Vec3.h>
+#include <vector>
 
-namespace GLSLPT
-{
-    class Material
-    {
-    public:
-        Material()
-        {
-            albedo   = Vec3(1.0f, 1.0f, 1.0f);
-            specular = 0.5f;
+namespace GLSLPT {
+class Material {
+ public:
+  Material() {
+    albedo = Vec3(1.0f, 1.0f, 1.0f);
+    specular = 0.5f;
 
-            emission    = Vec3(0.0f, 0.0f, 0.0f);
-            anisotropic = 0.0f;
+    emission = Vec3(0.0f, 0.0f, 0.0f);
+    anisotropic = 0.0f;
 
-            metallic     = 0.0f;
-            roughness    = 0.5f;
-            subsurface   = 0.0f;
-            specularTint = 0.0f;
-            
-            sheen          = 0.0f;
-            sheenTint      = 0.0f;
-            clearcoat      = 0.0f;
-            clearcoatGloss = 0.0f;
+    metallic = 0.0f;
+    roughness = 0.5f;
+    subsurface = 0.0f;
+    specularTint = 0.0f;
 
-            transmission = 0.0f;
-            ior          = 1.45f;
-            atDistance   = 1.0f;
-            padding1     = 0.0f;
+    sheen = 0.0f;
+    sheenTint = 0.0f;
+    clearcoat = 0.0f;
+    clearcoatGloss = 0.0f;
 
-            extinction    = Vec3(1.0f, 1.0f, 1.0f);
-            padding2      = 0.0f;
+    transmission = 0.0f;
+    ior = 1.45f;
+    atDistance = 1.0f;
+    padding1 = 0.0f;
 
-            albedoTexID            = -1.0f;
-            metallicRoughnessTexID = -1.0f;
-            normalmapTexID         = -1.0f;
-            padding3               =  0.0f;
-        };
+    extinction = Vec3(1.0f, 1.0f, 1.0f);
+    padding2 = 0.0f;
 
-        Vec3 albedo;
-        float specular;
+    albedoTexID = -1.0f;
+    metallicRoughnessTexID = -1.0f;
+    normalmapTexID = -1.0f;
+    padding3 = 0.0f;
+  };
 
-        Vec3 emission;
-        float anisotropic;
+  Vec3 albedo;
+  float specular;
 
-        float metallic;
-        float roughness;
-        float subsurface;
-        float specularTint;
-        
-        float sheen;
-        float sheenTint;
-        float clearcoat;
-        float clearcoatGloss;
+  Vec3 emission;
+  float anisotropic;
 
-        float transmission;
-        float ior;
-        float atDistance;
-        float padding1;
+  float metallic;
+  float roughness;
+  float subsurface;
+  float specularTint;
 
-        Vec3 extinction;
-        float padding2;
+  float sheen;
+  float sheenTint;
+  float clearcoat;
+  float clearcoatGloss;
 
-        float albedoTexID;
-        float metallicRoughnessTexID;
-        float normalmapTexID;
-        float padding3;
-    };
-}
+  float transmission;
+  float ior;
+  float atDistance;
+  float padding1;
+
+  Vec3 extinction;
+  float padding2;
+
+  float albedoTexID;
+  float metallicRoughnessTexID;
+  float normalmapTexID;
+  float padding3;
+};
+}  // namespace GLSLPT

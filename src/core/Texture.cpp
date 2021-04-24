@@ -10,8 +10,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions :
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -26,17 +26,15 @@
 #include <iostream>
 #include "stb_image.h"
 
-namespace GLSLPT
-{
-    bool Texture::LoadTexture(const std::string &filename)
-    {
-        name = filename;
+namespace GLSLPT {
+bool Texture::LoadTexture(const std::string& filename) {
+  name = filename;
 
-        texData = stbi_load(filename.c_str(), &width, &height, NULL, 3);
+  texData = stbi_load(filename.c_str(), &width, &height, NULL, 3);
 
-        if (texData != nullptr)
-            return true;
+  if (texData != nullptr)
+    return true;
 
-        return false;
-    }
+  return false;
 }
+}  // namespace GLSLPT

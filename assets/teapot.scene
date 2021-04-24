@@ -7,6 +7,7 @@ Renderer
 	envMap HDR/sunset.hdr
 	hdrMultiplier 5.0
 }
+
 Camera
 {
 	position 20 12 0
@@ -27,20 +28,118 @@ material white
 	clearcoat 1.0
 }
 
-mesh
+material orange
+{
+	color 1.0 0.186 0.0
+	roughness 0.001
+	specular 0.5
+	clearcoat 1.0
+	clearcoatGloss 0.93
+}
+
+material glass
+{
+	color 1.0 1.0 1.0
+	transmission 1.0
+	ior 1.45
+	roughness 0.05
+}
+
+material silver
+{
+	color 0.9 0.9 0.9
+	specular 0.5
+	roughness 0.2
+	metallic 1.0 
+	anisotropic 1.0
+}
+
+material ring_silver
+{
+	color 1.0 1.0 1.0
+	roughness 0.01 
+	specular 0.5
+	metallic 1.0 
+}
+
+material off_white
+{
+	color 1.0 0.94 0.8
+	roughness 1.0
+	specular 0.5
+}
+
+material ping
+{
+	color 0.93 0.89 0.85
+	roughness 1.0
+	subsurface 1.0
+	specular 0.5
+}
+
+material marb1
+{
+	color 0.026 0.147 0.075
+	roughness 0.077
+	specular 0.5
+	subsurface 1.0
+	clearcoat 1.0
+	clearcoatGloss 0.93
+}
+
+material marb2
+{
+	color 0.099 0.24 0.134
+	roughness 0.077
+	specular 0.5
+	subsurface 1.0
+	clearcoat 1.0
+	clearcoatGloss 0.93
+}
+
+#mesh
 {
 	file teapot/Mesh000.obj
-	material white
+	material glass
 }
 
-mesh
+#mesh
 {
 	file teapot/Mesh001.obj
-	material white
+	material glass
 }
 
-mesh
+#mesh
+{
+	file teapot/Mesh000.obj
+	material glass
+	position 0.5 0.0 0.0
+}
+
+#mesh
+{
+	file teapot/Mesh001.obj
+	material glass
+	position 0.5 0.0 0.0
+}
+
+#mesh
 {
 	file teapot/Mesh050.obj
 	material checker
+}
+
+mesh
+{
+	file marry/marry.obj
+	material glass
+	scale 3.0 3.0 3.0
+}
+
+light
+{
+	emission 80.0 80.0 80.0
+	position 0 390.0 -439.0
+	radius 60.0
+	type Sphere
 }

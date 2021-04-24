@@ -4,6 +4,8 @@ Renderer
 	maxDepth 4
 	tileWidth 256
 	tileHeight 144
+	envMap HDR/sunset.hdr
+	hdrMultiplier 5.0
 }
 
 Camera
@@ -60,11 +62,6 @@ material ping
 	roughness 1.0
 	subsurface 1.0
 	specular 0.5
-	
-	#color 0.93 0.89 0.85
-	#specular 0.6
-	#roughness 0.2
-	#subsurface 0.4
 }
 
 material marb1
@@ -104,7 +101,7 @@ mesh
 	position 0.4 1.86 -6.59
 }
 
-mesh
+#mesh
 {
 	name Platform
 	file hyperion/plate.obj
@@ -112,7 +109,7 @@ mesh
 	position 0 0.36 0
 }
 
-mesh
+#mesh
 {
 	name Floor
 	file hyperion/floor.obj
@@ -124,7 +121,7 @@ mesh
 	name Orange Ball
 	file hyperion/orange.obj
 	material orange
-	position 1.646 1.6861 3.5662
+	position 0 0.36 0
 }
 
 mesh
@@ -132,7 +129,7 @@ mesh
 	name Ring 1
 	file hyperion/ring1.obj
 	material ring_silver
-	position -0.308737 0.805763 -1.42968
+	position 0 0.36 0
 }
 
 mesh

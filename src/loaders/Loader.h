@@ -10,8 +10,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions :
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -27,11 +27,12 @@
 #include <cstring>
 #include "Scene.h"
 
-namespace GLSLPT
-{
-    class Scene;
+namespace GLSLPT {
+class Scene;
 
-    bool LoadSceneFromFile(const std::string &filename, Scene *scene, RenderOptions& renderOptions);
-    // logger function. might be set at init time
-    extern int(*Log)(const char* szFormat, ...);
-}
+bool LoadSceneFromFile(const std::string& filename,
+                       Scene* scene,
+                       RenderOptions& renderOptions);
+// logger function. might be set at init time
+extern int (*Log)(const char* szFormat, ...);
+}  // namespace GLSLPT
